@@ -27,7 +27,6 @@ def index():
 
 
 @app.route("/add", methods=["POST"])
-@app.post("/add")
 def add():
     task = Task()
     task.text = request.form["new_text"]
