@@ -31,6 +31,8 @@ def index():
 def add():
     task = Task()
     task.text = request.form["new_text"]
+    if task.text == "":
+        return redirect(url_for("index"))
     task.status = 0
     db.session.add(task)
     db.session.commit()
